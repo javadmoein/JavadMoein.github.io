@@ -3,458 +3,278 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Javad Moein | Robotics AI Researcher</title>
-  <meta name="description" content="Personal website of Javad Moein, Robotics AI Researcher working on robot learning, vision-language-action models, embodied AI, and real-world robotic autonomy." />
+  <title>Javad Moein</title>
+  <meta name="description" content="Personal academic website of Javad Moein, Robotics AI researcher working on robot learning, vision-language-action models, embodied AI, and real-world robotic autonomy." />
   <style>
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #111833;
-      --panel: #151e3d;
-      --text: #e8ecf8;
-      --muted: #a9b4d0;
-      --line: rgba(255,255,255,0.08);
-      --accent: #7cc6ff;
-      --accent-2: #9b8cff;
-      --maxw: 1040px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, var(--bg) 0%, #0e1530 100%);
-      color: var(--text);
-      line-height: 1.65;
+      padding: 0;
+      background: #ffffff;
+      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
     }
 
     a {
-      color: var(--accent);
+      color: #1772b8;
       text-decoration: none;
     }
 
-    a:hover { text-decoration: underline; }
+    a:hover {
+      text-decoration: underline;
+    }
 
     .container {
-      width: min(92%, var(--maxw));
+      max-width: 760px;
       margin: 0 auto;
+      padding: 40px 20px 70px;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(11,16,32,0.75);
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      gap: 16px;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.2px;
-      color: var(--text);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      padding: 72px 0 38px;
-    }
-
-    .hero-grid {
+    .intro {
       display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: 28px;
+      grid-template-columns: 1fr 230px;
+      gap: 36px;
       align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--accent);
-      font-size: 0.9rem;
-      margin-bottom: 18px;
-      background: rgba(124,198,255,0.08);
+      margin-bottom: 38px;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.05;
-      margin: 0 0 16px;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin: 0 0 18px;
-      max-width: 760px;
-    }
-
-    .hero-card,
-    section {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
-    }
-
-    .hero-card {
-      padding: 24px;
-    }
-
-    .hero-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-    }
-
-    .quick-list {
-      padding-left: 18px;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: 1px solid var(--line);
-      transition: transform 0.15s ease, opacity 0.15s ease;
-    }
-
-    .btn:hover {
-      text-decoration: none;
-      transform: translateY(-1px);
-      opacity: 0.95;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #091120;
-      border: none;
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,0.04);
-    }
-
-    main {
-      padding-bottom: 60px;
-    }
-
-    .content {
-      display: grid;
-      gap: 22px;
-    }
-
-    section {
-      padding: 28px;
-    }
-
-    h2 {
-      font-size: 1.55rem;
-      margin-top: 0;
-      margin-bottom: 14px;
-    }
-
-    .muted { color: var(--muted); }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1.08rem;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .tag {
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .project {
-      padding-bottom: 4px;
-    }
-
-    .project + .project {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-
-    .project-title {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-
-    .project-title h3 {
-      margin: 0;
-    }
-
-    .project-meta {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .pub-item + .pub-item {
-      margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-    }
-
-    footer {
-      padding: 30px 0 50px;
-      color: var(--muted);
+      font-size: 34px;
+      font-weight: 500;
+      margin: 0 0 14px;
       text-align: center;
     }
 
-    @media (max-width: 840px) {
-      .hero-grid,
-      .grid-2 {
+    .bio {
+      margin: 0;
+      text-align: left;
+    }
+
+    .links {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .profile-photo {
+      width: 230px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #ddd;
+      margin: 34px 0 24px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      margin: 0 0 20px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .pub-thumb {
+      width: 150px;
+      height: 85px;
+      object-fit: cover;
+      border: 1px solid #eee;
+      background: #f6f6f6;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      color: #1772b8;
+      margin-bottom: 3px;
+    }
+
+    .pub-authors {
+      font-size: 14px;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .pub-venue {
+      font-size: 14px;
+      font-style: italic;
+      color: #222;
+    }
+
+    .section-list {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    .section-list li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 55px;
+      color: #555;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .profile-photo {
+        margin: 0 auto;
+      }
+
+      .publication {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 48px;
-      }
-
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
+      .pub-thumb {
+        width: 100%;
+        height: auto;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <a class="brand" href="#top">Javad Moein</a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
-          <a href="#publications">Publications</a>
-          <a href="#contact">Contact</a>
+  <main class="container">
+    <section class="intro">
+      <div>
+        <h1>Javad Moein</h1>
+        <p class="bio">
+          I am a Robotics AI researcher at Northeastern University working on robot learning, embodied intelligence,
+          robotics foundation models, and vision-language-action systems. My research focuses on building robots that can
+          perceive task-relevant information, reason over partially observable environments, plan long-horizon behaviors,
+          and execute robust actions in the real world.
+        </p>
+        <p class="bio">
+          I am especially interested in active perception, generalization, sim-to-real transfer, multimodal reasoning,
+          geometry-aware learning, failure detection, and real-world robotic autonomy.
+        </p>
+        <div class="links">
+          <a href="mailto:your.email@example.com">Email</a> /
+          <a href="Javad_Moein_CV.pdf">CV</a> /
+          <a href="#">Scholar</a> /
+          <a href="https://github.com/jaavad" target="_blank" rel="noopener noreferrer">Github</a> /
+          <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer">Linkedin</a>
         </div>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-    <div class="container">
-      <section class="hero" style="background: transparent; border: none; box-shadow: none; padding-left: 0; padding-right: 0;">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow">Robotics AI · Embodied Intelligence · Vision-Language-Action</div>
-            <h1>Building intelligent robots that can understand, reason, and act in the real world.</h1>
-            <p>
-              I am <strong>Javad Moein</strong>, a Robotics AI researcher at Northeastern University working on robot learning, robotics foundation models, vision-language-action systems, active perception, and long-horizon autonomy. My work focuses on building robotic systems that combine perception, reasoning, planning, and execution for complex real-world tasks and robust embodied intelligence.
-            </p>
-            <p>
-              I am particularly interested in generalization, robust embodied intelligence, multimodal reasoning, geometry-aware learning, sim-to-real transfer, safe autonomy, and the bridge between foundation models and real robotic deployment.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="Javad_Moein_CV.pdf">Download CV</a>
-              <a class="btn btn-secondary" href="#contact">Get in touch</a>
-              <a class="btn btn-secondary" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a class="btn btn-secondary" href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-          </div>
-
-          <aside class="hero-card">
-            <h3>Current Focus</h3>
-            <ul class="quick-list">
-              <li>Robotics foundation models and VLA systems</li>
-              <li>Active perception and task-aware state estimation</li>
-              <li>Long-horizon robotic decision-making</li>
-              <li>Real-world deployment on robotic platforms</li>
-              <li>Generalization, robustness, and embodied reasoning</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
-      <div class="content">
-        <section id="about">
-          <h2>About</h2>
-          <p class="muted">
-            My research sits at the intersection of <strong>robot learning</strong>, <strong>embodied AI</strong>, <strong>vision-language-action models</strong>, and <strong>real-world robotic autonomy</strong>. I work on systems that allow robots to interpret tasks, identify task-relevant entities, estimate environment states, reason over partial observations, plan actions, and execute long-horizon behaviors in complex environments. My broader goal is to build robotic systems that can continuously learn, adapt, and generalize across tasks, embodiments, and environments.
-          </p>
-          <p class="muted">
-            More broadly, I am interested in building general-purpose robotic intelligence through multimodal learning,
-            structured reasoning, active perception, safe autonomy, and strong generalization across tasks and embodiments.
-          </p>
-        </section>
-
-        <section id="research">
-          <h2>Research Interests</h2>
-          <div class="grid-2">
-            <div class="card">
-              <h3>Embodied AI and Robot Learning</h3>
-              <p class="muted">Learning-based robotic systems for long-horizon task execution, decision-making, and adaptive control.</p>
-            </div>
-            <div class="card">
-              <h3>Robotics Foundation Models</h3>
-              <p class="muted">Generalist models that integrate perception, language, reasoning, planning, and action.</p>
-            </div>
-            <div class="card">
-              <h3>Vision-Language-Action Models</h3>
-              <p class="muted">Using multimodal models to connect scene understanding and semantic reasoning with grounded robot behavior.</p>
-            </div>
-            <div class="card">
-              <h3>Active Perception</h3>
-              <p class="muted">Task-aware perception systems that focus attention on relevant objects, receptacles, and state variables.</p>
-            </div>
-          </div>
-          <div class="tag-row">
-            <span class="tag">Embodied Intelligence</span>
-            <span class="tag">Robot Learning</span>
-            <span class="tag">Active Perception</span>
-            <span class="tag">VLA</span>
-            <span class="tag">Foundation Models</span>
-            <span class="tag">Long-Horizon Planning</span>
-            <span class="tag">Generalization</span>
-            <span class="tag">Real-World Robotics</span>
-          </div>
-        </section>
-
-        <section id="projects">
-          <h2>Selected Projects</h2>
-
-          <div class="project">
-            <div class="project-title">
-              <h3>Unified Learnable Robotic Cognition Framework</h3>
-              <div class="project-meta">Research System</div>
-            </div>
-            <p class="muted">
-              A modular Robotics Foundation Model (RFM) framework that integrates task interpretation, task-relevant state construction, active perception, state estimation, reasoning, planning, hierarchical decision-making, execution, and closed-loop monitoring. The framework is designed for long-horizon task execution in partially observable environments with strong emphasis on generalization and robustness.
-            </p>
-          </div>
-
-          <div class="project">
-            <div class="project-title">
-              <h3>Task-Oriented Active Object Detection</h3>
-              <div class="project-meta">Perception / Embodied AI</div>
-            </div>
-            <p class="muted">
-              A task-aware active perception pipeline that uses language-guided reasoning to identify relevant objects, detect them in the environment using Grounded SAM-based perception, and validate detections through multimodal reasoning for more reliable robotic execution.
-            </p>
-          </div>
-
-          <div class="project">
-            <div class="project-title">
-              <h3>Vision-Language State Estimation for Household Robotics</h3>
-              <div class="project-meta">VLM-based State Understanding</div>
-            </div>
-            <p class="muted">
-              A structured multi-prompt VLM framework for detecting objects, receptacles, held items, action outcomes, and environment state from first-person segmented observations, with contextual memory and physically grounded reasoning over task-relevant history.
-            </p>
-          </div>
-
-          <div class="project">
-            <div class="project-title">
-              <h3>Real-World Deployment on Boston Dynamics Spot</h3>
-              <div class="project-meta">Robotic Deployment</div>
-            </div>
-            <p class="muted">
-              Development and deployment of language-conditioned robotic behaviors on Boston Dynamics Spot, including active object search, navigation, articulated interaction, manipulation, and embodied decision-making for real-world robotic tasks.
-            </p>
-          </div>
-        </section>
-
-        <section id="publications">
-          <h2>Publications</h2>
-          <div class="pub-item">
-            <h3>Coming soon</h3>
-            <p class="muted">
-              Add your papers here in this format: <br />
-              <strong>Your Name</strong>, Coauthor Name, Coauthor Name. <em>Paper Title</em>. Conference/Journal, Year.
-            </p>
-          </div>
-          <div class="pub-item">
-            <h3>Research Manuscripts and Ongoing Work</h3>
-            <p class="muted">
-              You can also list preprints, workshop papers, ongoing manuscripts, or project pages here.
-            </p>
-          </div>
-        </section>
-
-        <section id="contact">
-          <h2>Contact</h2>
-          <p class="muted">
-            I am always happy to connect about robotics AI, embodied intelligence, research collaborations, and applied research opportunities.
-          </p>
-          <p class="muted">
-            Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br />
-            GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a><br />
-            LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-linkedin</a>
-          </p>
-        </section>
       </div>
+
+      <div>
+        <img class="profile-photo" src="profile.jpg" alt="Javad Moein profile photo" />
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="research">
+      <h2>Research</h2>
+      <ul class="section-list">
+        <li><strong>Robotics Foundation Models:</strong> modular robotic cognition systems for task interpretation, perception, state estimation, reasoning, planning, and closed-loop execution.</li>
+        <li><strong>Vision-Language-Action Models:</strong> multimodal systems that connect language, visual understanding, and grounded robot behavior.</li>
+        <li><strong>Active Perception:</strong> task-aware perception for identifying relevant objects, receptacles, spatial relations, and environment states.</li>
+        <li><strong>Robust Robot Learning:</strong> generalization, failure detection, sim-to-real transfer, and long-horizon embodied decision-making.</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+
+      <div class="publication">
+        <img class="pub-thumb" src="project_rfm.jpg" alt="Robotics foundation model project thumbnail" />
+        <div>
+          <div class="pub-title">Modular Robotics Foundation Model for Long-Horizon Task Execution</div>
+          <div class="pub-authors"><strong>Javad Moein</strong></div>
+          <div class="pub-venue">Robotic cognition framework combining task interpretation, active perception, state estimation, reasoning, planning, execution, and failure detection.</div>
+        </div>
+      </div>
+
+      <div class="publication">
+        <img class="pub-thumb" src="project_active_perception.jpg" alt="Active perception project thumbnail" />
+        <div>
+          <div class="pub-title">Task-Oriented Active Object Detection</div>
+          <div class="pub-authors"><strong>Javad Moein</strong></div>
+          <div class="pub-venue">Language-guided active perception pipeline using Grounded SAM-based detection and multimodal validation for reliable robotic execution.</div>
+        </div>
+      </div>
+
+      <div class="publication">
+        <img class="pub-thumb" src="project_vlm_state.jpg" alt="VLM state estimation project thumbnail" />
+        <div>
+          <div class="pub-title">Vision-Language State Estimation for Household Robotics</div>
+          <div class="pub-authors"><strong>Javad Moein</strong></div>
+          <div class="pub-venue">Structured VLM framework for detecting objects, receptacles, held items, action outcomes, and environment state from first-person observations.</div>
+        </div>
+      </div>
+
+      <div class="publication">
+        <img class="pub-thumb" src="project_spot.jpg" alt="Boston Dynamics Spot project thumbnail" />
+        <div>
+          <div class="pub-title">Real-World Robotic Deployment on Boston Dynamics Spot</div>
+          <div class="pub-authors"><strong>Javad Moein</strong></div>
+          <div class="pub-venue">Language-conditioned robotic behaviors including active search, navigation, articulated interaction, manipulation, and embodied decision-making.</div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="publication">
+        <img class="pub-thumb" src="paper_placeholder.jpg" alt="Publication thumbnail" />
+        <div>
+          <div class="pub-title">Add Your Paper Title Here</div>
+          <div class="pub-authors"><strong>Javad Moein</strong>, Coauthor Name, Coauthor Name</div>
+          <div class="pub-venue">Conference or Journal, Year</div>
+        </div>
+      </div>
+
+      <div class="publication">
+        <img class="pub-thumb" src="paper_placeholder.jpg" alt="Publication thumbnail" />
+        <div>
+          <div class="pub-title">Add Another Paper / Preprint / Workshop Paper Here</div>
+          <div class="pub-authors"><strong>Javad Moein</strong>, Coauthor Name, Coauthor Name</div>
+          <div class="pub-venue">Conference or Journal, Year</div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="academic-service">
+      <h2>Academic Services</h2>
+      <ul class="section-list">
+        <li>Add reviewer roles, workshop service, conference service, or lab/community service here.</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="section-list">
+        <li>Add teaching assistantships, mentoring, tutorials, or robotics/AI teaching experience here.</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      Website inspired by simple academic homepage templates. Last updated: 2026.
     </div>
   </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Javad Moein. Built with GitHub Pages.
-    </div>
-  </footer>
 </body>
 </html>
