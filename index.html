@@ -195,13 +195,13 @@
 
     <li>
       <strong>VLAs:</strong>
-      Improving their generalization and sample efficiency by integrating geometric reasoning with semantic understanding of the environment.
+      Improving VLAs generalization and sample efficiency by integrating geometric reasoning along with semantic understanding of the environment.
     </li>
 
     <li>
       <strong>Geometric Deep Learning:</strong>
       Incorporating geometric inductive biases into robot learning models, including geometry-aware representation learning, 
-      structured policy learning, and SE(3)-equivariant and symmetry-aware architectures for improved generalization and sample efficiency.
+      structured policy learning, and symmetry-aware architectures for improved generalization and sample efficiency.
     </li>
 
     <li>
@@ -309,7 +309,7 @@
       <div class="publication">
         <img class="pub-thumb" src="project_rfm.jpg" alt="Robotics foundation model project thumbnail" />
         <div>
-          <div class="pub-title">Latent Skill Space and Dynamics for Sample-Efficient Long-Horizon Robot Learning</div>
+          <div class="pub-title">Latent Skill Space and Dynamics for Sample-Efficient Long-Horizon Task Learning</div>
           <div class="pub-venue"> This project explores skill-based model-based reinforcement learning for solving long-horizon tasks with
             sparse rewards. I worked on jointly learning a reusable skill library and a skill dynamics model from
             large task-agnostic offline datasets, allowing the agent to plan in latent skill space instead of predicting
@@ -324,13 +324,12 @@
       <div class="publication">
         <img class="pub-thumb" src="project_rfm.jpg" alt="Robotics foundation model project thumbnail" />
         <div>
-          <div class="pub-title">Generalizable Hierarchical Skill Learning</div>
-          <div class="pub-venue"> This project focuses on generalizable hierarchical skill learning by developing reusable high-level and
-            low-level skill libraries for real-world robotic systems. I trained language-conditioned high-level skills for
-            Boston Dynamics Spot, including active search, object pickup, object placement, and opening or closing articulated receptacles,
-            while grounding these skills in real-world execution through the Spot SDK and multimodal foundation models. 
-            I also trained low-level skills using reinforcement learning and imitation learning with the goal of expanding 
-            the framework to Unitree G1 and UR5 for robot-agnostic generalization.</div>
+          <div class="pub-title">Task-Oriented Active Perception</div>
+          <div class="pub-venue"> This project develops a task-driven active perception framework for robotic agents operating in partially observable and unstructured environments. 
+            I designed a framework that identifies task-relevant objects, receptacles, and environmental elements, actively searches for
+            unseen objects, estimates component states, and evaluates skill termination through success/failure reasoning. 
+            By using the current belief state to determine feasible next skills, the system reduces the policy’s action space and supports 
+            more efficient, grounded, and reliable decision-making.</div>
         </div>
       </div>
 
@@ -339,26 +338,27 @@
       <div class="publication">
         <img class="pub-thumb" src="project_active_perception.jpg" alt="Active perception project thumbnail" />
         <div>
-          <div class="pub-title">Task-Oriented Active Perception</div>
-          <div class="pub-venue">Language-guided active perception pipeline using Grounded SAM-based detection and multimodal validation for reliable robotic execution.</div>
+          <div class="pub-title"> Novel Sequential Action-Space Representation for Efficient MuZero and AlphaZero Training</div>
+          <div class="pub-venue">This project improves the training efficiency of MuZero and AlphaZero by introducing a novel sequential action-space representation.
+            Instead of predicting all action dimensions simultaneously, I reformulated action prediction as a sequential decision process,
+            reducing the effective policy search complexity from O(P(n)) to O(n). This representation accelerated training by approximately 3×, 
+            reduced memory usage and model parameters, and improved performance compared to conventional full action-space representations.</div>
         </div>
       </div>
 
       <div class="publication">
         <img class="pub-thumb" src="project_vlm_state.jpg" alt="VLM state estimation project thumbnail" />
         <div>
-          <div class="pub-title">Vision-Language State Estimation for Household Robotics</div>
-          <div class="pub-venue">Structured VLM framework for detecting objects, receptacles, held items, action outcomes, and environment state from first-person observations.</div>
+          <div class="pub-title">FIRM–MDP Hierarchical Exploration for Autonomous Mobile Robots in Continuous Belief Space</div>
+          <div class="pub-venue">This project developed a FIRM–MDP hierarchical exploration framework for autonomous mobile robot exploration
+            in continuous belief space. I designed a high-level global planner using dynamic-programming TSP over the FIRM graph to 
+            select the optimal sequence of regions, and a low-level continuous-belief-space local planner for safe and efficient exploration
+            under motion and observation uncertainty. The framework outperformed classical baselines, 
+            and I also developed a robust region-to-region navigation algorithm, called Transfer, which improved reliable motion in cluttered environments.</div>
         </div>
       </div>
 
-      <div class="publication">
-        <img class="pub-thumb" src="project_spot.jpg" alt="Boston Dynamics Spot project thumbnail" />
-        <div>
-          <div class="pub-title">Real-World Robotic Deployment on Boston Dynamics Spot</div>
-          <div class="pub-venue">Language-conditioned robotic behaviors including active search, navigation, articulated interaction, manipulation, and embodied decision-making.</div>
-        </div>
-      </div>
+
     </section>
 
     <hr />
