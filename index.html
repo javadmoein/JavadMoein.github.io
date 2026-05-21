@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Javad Moein</title>
+
   <meta name="description" content="Personal academic website of Javad Moein, Robotics AI researcher working on robot learning, vision-language-action models, embodied AI, and real-world robotic autonomy." />
+
   <style>
     body {
       margin: 0;
       padding: 0;
       background: #ffffff;
-      color: #222;
+      color: #333;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      line-height: 1.55;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     a {
-      color: #1772b8;
+      color: #2b9fc4;
       text-decoration: none;
     }
 
@@ -25,105 +28,144 @@
       text-decoration: underline;
     }
 
-    .container {
-      max-width: 760px;
+    .page {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px 70px;
-    }
-
-    .intro {
+      padding: 55px 35px 80px;
       display: grid;
-      grid-template-columns: 1fr 230px;
-      gap: 36px;
-      align-items: center;
-      margin-bottom: 38px;
+      grid-template-columns: 260px 1fr;
+      gap: 70px;
+      align-items: start;
     }
 
-    h1 {
-      font-size: 34px;
-      font-weight: 500;
-      margin: 0 0 14px;
-      text-align: center;
-    }
+    /* LEFT SIDEBAR */
 
-    .bio {
-      margin: 0;
-      text-align: left;
-    }
-
-    .links {
-      margin-top: 14px;
-      text-align: center;
-      font-size: 14px;
+    .sidebar {
+      position: sticky;
+      top: 35px;
+      align-self: start;
     }
 
     .profile-photo {
-      width: 230px;
-      height: 180px;
+      width: 210px;
+      height: 210px;
       object-fit: cover;
       object-position: center 20%;
       border-radius: 50%;
       display: block;
+      border: 1px solid #eee;
+      margin-bottom: 18px;
     }
 
-    hr {
-      border: 0;
-      border-top: 1px solid #ddd;
-      margin: 34px 0 24px;
+    .sidebar-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .sidebar-title {
+      font-size: 15px;
+      margin: 0 0 22px;
+      color: #444;
+    }
+
+    .sidebar-info {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .sidebar-info div {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-info span {
+      display: inline-block;
+      width: 24px;
+      color: #555;
+    }
+
+    /* MAIN CONTENT */
+
+    .main-content {
+      max-width: 850px;
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 600;
+      margin: 0 0 18px;
+      color: #333;
+    }
+
+    .bio {
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0 0 18px;
+      color: #333;
+    }
+
+    .links {
+      margin: 26px 0 52px;
+      font-size: 20px;
+      color: #2b9fc4;
+    }
+
+    .links a {
+      margin-right: 8px;
     }
 
     h2 {
-      font-size: 24px;
-      font-weight: 500;
-      margin: 0 0 20px;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 42px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+      color: #333;
     }
+
+    .section-list {
+      padding-left: 28px;
+      margin: 0 0 34px;
+      font-size: 17px;
+    }
+
+    .section-list li {
+      margin-bottom: 12px;
+    }
+
+    /* PROJECTS */
 
     .publication {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 22px;
-      align-items: center;
-      margin-bottom: 34px;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 42px;
     }
-
-
 
     .pub-thumb {
       width: 260px;
-      height: 160px;
+      height: 165px;
       object-fit: cover;
       border: 1px solid #eee;
       background: #f6f6f6;
       border-radius: 6px;
       display: block;
     }
-    
 
     .pub-title {
       font-weight: 700;
+      font-size: 17px;
       color: #1772b8;
-      margin-bottom: 3px;
-    }
-
-    .pub-authors {
-      font-size: 14px;
-      color: #222;
       margin-bottom: 6px;
     }
 
     .pub-venue {
-      font-size: 14px;
+      font-size: 14.5px;
       font-style: italic;
-      color: #222;
-    }
-
-    .section-list {
-      padding-left: 22px;
-      margin: 0;
-    }
-
-    .section-list li {
-      margin-bottom: 10px;
+      color: #333;
+      line-height: 1.55;
     }
 
     .footer {
@@ -132,257 +174,291 @@
       font-size: 13px;
     }
 
+    /* MOBILE / SMALL SCREEN */
+
     @media (max-width: 900px) {
-      .intro {
+      .page {
         grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 35px 22px 70px;
+      }
+
+      .sidebar {
+        position: static;
         text-align: center;
       }
 
       .profile-photo {
-        margin: 0 auto;
+        margin: 0 auto 18px;
+      }
+
+      .sidebar-info span {
+        width: auto;
+        margin-right: 8px;
+      }
+
+      .main-content {
+        max-width: 100%;
+      }
+
+      .bio {
+        font-size: 16px;
+      }
+
+      .links {
+        font-size: 16px;
+        text-align: center;
       }
 
       .publication {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 14px;
       }
 
       .pub-thumb {
         width: 100%;
         height: auto;
-        max-height: 260px;
+        max-height: 280px;
         object-fit: contain;
       }
     }
-
-    
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <section class="intro">
-      <div>
-        <h1>Javad Moein</h1>
-        <p class="bio">
+  <main class="page">
 
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <img class="profile-photo" src="profile.jpg" alt="Javad Moein profile photo" />
 
-      I am a Robotics AI researcher at 
-      <a href="https://www2.ccs.neu.edu/research/helpinghands/people/">the Helping Hands Lab</a>
-      at <a href="https://www.northeastern.edu/">Northeastern University</a>, advised by
-      <a href="https://www.khoury.northeastern.edu/people/robert-platt/">Prof. Rob Platt</a>.
-      My research focuses on robotics learning, humaniod, manipulation and mobile manipulation, with an emphasis on imitation learning,
-      reinforcement learning, geometric deep learning, and VLAs. I am particularly interested in improving
-      generalization, sim-to-real, sample efficiency, and safe & robust learning.
+      <h1 class="sidebar-name">Javad Moein</h1>
 
+      <p class="sidebar-title">
+        Robotics AI Researcher
       </p>
-        
 
-        </p>
+      <div class="sidebar-info">
+        <div><span>📍</span> Boston, Massachusetts</div>
+        <div><span>🏛️</span> Northeastern University</div>
+        <div><span>✉️</span> <a href="mailto:moein.j@northeastern.edu">Email</a></div>
+        <div><span>💻</span> <a href="https://github.com/jaavad" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+        <div><span>🔗</span> <a href="https://www.linkedin.com/in/javad-moein-10bbb079/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <section class="main-content">
+
+      <section id="about">
         <p class="bio">
-          My research goal is to enable robots and embodied intelligences to perform complex long-horizon tasks in real-world environments.
+          I am a Robotics AI researcher at 
+          <a href="https://www2.ccs.neu.edu/research/helpinghands/people/">the Helping Hands Lab</a>
+          at <a href="https://www.northeastern.edu/">Northeastern University</a>, advised by
+          <a href="https://www.khoury.northeastern.edu/people/robert-platt/">Prof. Rob Platt</a>.
+          My research focuses on robotics learning, humanoids, manipulation, and mobile manipulation, with an emphasis on imitation learning,
+          reinforcement learning, geometric deep learning, and VLAs. I am particularly interested in improving
+          generalization, sim-to-real transfer, sample efficiency, and safe and robust learning.
+        </p>
+
+        <p class="bio">
+          My research goal is to enable robots and embodied intelligence systems to perform complex long-horizon tasks in real-world environments.
           To achieve this, I design hierarchical frameworks that combine high-level decision-making, planning, and reasoning with low-level control and action execution.
         </p>
+
         <div class="links">
-          <a href="mailto:moein.j@northeastern.edu">Email</a> /
+          <a href="mailto:moein.j@northeastern.edu">✉ Email</a> /
           <a href="Javad_Moein_CV.pdf">CV</a> /
-          <!-- <a href="#">Scholar</a> / --> 
-          <a href="https://github.com/jaavad" target="_blank" rel="noopener noreferrer">Github</a> /
-          <a href="https://www.linkedin.com/in/javad-moein-10bbb079/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+          <a href="https://github.com/jaavad" target="_blank" rel="noopener noreferrer">GitHub</a> /
+          <a href="https://www.linkedin.com/in/javad-moein-10bbb079/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+
+        <ul class="section-list">
+          <li>
+            <strong>VLAs:</strong>
+            Improving VLA generalization and sample efficiency by integrating geometric reasoning with semantic understanding of the environment.
+          </li>
+
+          <li>
+            <strong>Geometric Deep Learning:</strong>
+            Incorporating geometric inductive biases into robot learning models, including geometry-aware representation learning,
+            structured policy learning, and symmetry-aware architectures for improved generalization and sample efficiency.
+          </li>
+
+          <li>
+            <strong>Safe & Robust Learning:</strong>
+            Detecting potential failures early and developing safe recovery policies to prevent those failures before they occur.
+          </li>
+
+          <li>
+            <strong>Skill Learning:</strong>
+            Learning libraries of reusable skills and skill-dynamics models in latent space for skill-based model-based reinforcement learning,
+            enabling agents to complete long-horizon tasks with sparse rewards.
+          </li>
+
+          <li>
+            <strong>Hierarchical Learning:</strong>
+            Combining high-level decision-making, planning, and reasoning with low-level control and action execution for complex long-horizon tasks.
+          </li>
+
+          <li>
+            <strong>Active Perception:</strong>
+            Developing task-aware perception systems for identifying relevant objects, receptacles, spatial relations, and environment states.
+          </li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Selected Projects</h2>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_latent.jpg" alt="Latent-space safety project thumbnail" />
+          <div>
+            <div class="pub-title">Latent-Space Safety for VLAs: From Detection to Prediction</div>
+            <div class="pub-venue">
+              This project develops latent-space safety methods for VLAs by detecting failure-prone states directly from
+              the model’s internal representations. I proposed safety functions and latent dynamics models that
+              can predict potential failures before they physically occur, enabling earlier intervention during robot execution.
+              The broader goal is to make VLA-based robot policies safer and more robust through failure prediction, preemptive correction,
+              and safe recovery policies.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_geo.jpg" alt="Geometric VLA project thumbnail" />
+          <div>
+            <div class="pub-title">Bridging Semantics and Geometry: Equivariant Representations for Generalizable VLAs</div>
+            <div class="pub-venue">
+              This project investigates how to make VLAs more generalizable by bridging semantic understanding
+              with geometric reasoning. I proposed equivariant representation learning methods for VLAs, including
+              a lightweight geometric adapter on frozen VLM features and a dual-stream architecture that fuses semantic and geometric tokens
+              before action prediction. The goal is to improve robustness to viewpoint changes, object pose variations, and 
+              distribution shifts while preserving the semantic and language understanding of pretrained vision-language models.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_rfm.jpg" alt="Robotics foundation model project thumbnail" />
+          <div>
+            <div class="pub-title">Modular Robotics Foundation Model for Long-Horizon Task Execution</div>
+            <div class="pub-venue">
+              This project developed a Modular Robotics Foundation Model (MRFM) for long-horizon task execution in 
+              unseen environments. I built an end-to-end embodied robotics pipeline that integrates task interpretation, 
+              task-relevant component identification, active perception, state estimation, reasoning, planning,
+              hierarchical decision-making, closed-loop execution, and failure detection and diagnosis. The goal is to enable robots to 
+              complete complex tasks through a unified learnable framework that separates high-level decision-making from low-level execution,
+              uses linguistic abstractions to connect policies with skills, and continually expands a reusable skill library.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_life.jpg" alt="Lifelong learning project thumbnail" />
+          <div>
+            <div class="pub-title">Lifelong Learning by Transferable Linguistic Abstraction</div>
+            <div class="pub-venue">
+              This project explores lifelong robot learning through transferable linguistic abstractions that
+              make policies easier to reuse across environments and transfer from simulation to the real world. I developed 
+              language-based state estimation methods that represent objects, receptacles, spatial relations, and task progress in
+              a structured symbolic form, allowing the robot to reason over the environment beyond raw visual observations. 
+              I also developed a hierarchical language-conditioned policy framework that connects high-level task reasoning with
+              low-level skill execution, enabling more flexible generalization and more efficient sim-to-real transfer.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_gen.jpg" alt="Generalizable hierarchical skill learning project thumbnail" />
+          <div>
+            <div class="pub-title">Generalizable Hierarchical Skill Learning</div>
+            <div class="pub-venue">
+              This project focuses on generalizable hierarchical skill learning by developing reusable high-level and
+              low-level skill libraries for real-world robotic systems. I trained language-conditioned high-level skills for
+              Boston Dynamics Spot, including active search, object pickup, object placement, and opening or closing articulated receptacles,
+              while grounding these skills in real-world execution through the Spot SDK and multimodal foundation models. 
+              I also trained low-level skills using reinforcement learning and imitation learning with the goal of expanding 
+              the framework to Unitree G1 and UR5 for robot-agnostic generalization.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_skimo.jpg" alt="Skill-based model-based reinforcement learning project thumbnail" />
+          <div>
+            <div class="pub-title">Latent Skill Space and Dynamics for Sample-Efficient Long-Horizon Task Learning</div>
+            <div class="pub-venue">
+              This project explores skill-based model-based reinforcement learning for solving long-horizon tasks with
+              sparse rewards. I worked on jointly learning a reusable skill library and a skill dynamics model from
+              large task-agnostic offline datasets, allowing the agent to plan in latent skill space instead of predicting
+              every low-level action step-by-step. The goal is to improve sample efficiency and sim-to-real transfer by using
+              the learned skill model as a world model for efficient online high-level behavior learning and fine-tuning
+              the offline-trained representations for new downstream tasks.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_tap.jpg" alt="Task-oriented active perception project thumbnail" />
+          <div>
+            <div class="pub-title">Task-Oriented Active Perception</div>
+            <div class="pub-venue">
+              This project develops a task-driven active perception framework for robotic agents operating in partially observable and unstructured environments. 
+              I designed a framework that identifies task-relevant objects, receptacles, and environmental elements, actively searches for
+              unseen objects, estimates component states, and evaluates skill termination through success/failure reasoning. 
+              By using the current belief state to determine feasible next skills, the system reduces the policy’s action space and supports 
+              more efficient, grounded, and reliable decision-making.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_muz.jpg" alt="MuZero and AlphaZero action-space project thumbnail" />
+          <div>
+            <div class="pub-title">Novel Sequential Action-Space Representation for Efficient MuZero and AlphaZero Training</div>
+            <div class="pub-venue">
+              This project improves the training efficiency of MuZero and AlphaZero by introducing a novel sequential action-space representation.
+              Instead of predicting all action dimensions simultaneously, I reformulated action prediction as a sequential decision process,
+              reducing the effective policy search complexity from O(P(n)) to O(n). This representation accelerated training by approximately 3×, 
+              reduced memory usage and model parameters, and improved performance compared to conventional full action-space representations.
+            </div>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img class="pub-thumb" src="project_nav.jpg" alt="FIRM-MDP mobile robot exploration project thumbnail" />
+          <div>
+            <div class="pub-title">FIRM–MDP Hierarchical Exploration for Autonomous Mobile Robots in Continuous Belief Space</div>
+            <div class="pub-venue">
+              This project developed a FIRM–MDP hierarchical exploration framework for autonomous mobile robot exploration
+              in continuous belief space. I designed a high-level global planner using dynamic-programming TSP over the FIRM graph to 
+              select the optimal sequence of regions, and a low-level continuous-belief-space local planner for safe and efficient exploration
+              under motion and observation uncertainty. The framework outperformed classical baselines, 
+              and I also developed a robust region-to-region navigation algorithm, called Transfer, which improved reliable motion in cluttered environments.
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="teaching">
+        <h2>Teaching</h2>
+
+        <ul class="section-list">
+          <li>Add teaching assistantships, mentoring, tutorials, or robotics/AI teaching experience here.</li>
+        </ul>
+      </section>
+
+      <div class="footer">
+        Website inspired by simple academic homepage templates. Last updated: 2026.
       </div>
 
-      <div>
-        <img class="profile-photo" src="profile.jpg" alt="Javad Moein profile photo" />
-      </div>
     </section>
-
-    <hr />
-
-
-    <section id="research">
-  <h2>Research</h2>
-  <ul class="section-list">
-
-    <li>
-      <strong>VLAs:</strong>
-      Improving VLAs generalization and sample efficiency by integrating geometric reasoning along with semantic understanding of the environment.
-    </li>
-
-    <li>
-      <strong>Geometric Deep Learning:</strong>
-      Incorporating geometric inductive biases into robot learning models, including geometry-aware representation learning, 
-      structured policy learning, and symmetry-aware architectures for improved generalization and sample efficiency.
-    </li>
-
-    <li>
-      <strong>Safe & Robust Learning:</strong>
-      Detecting potential failures early and developing safe recovery policies to prevent those failures before they occur.
-    </li>
-
-    <li>
-      <strong>Skill Learning:</strong>
-      Learning libraries of reusable skills and skill-dynamics models in latent space for skill-based model-based reinforcement learning, 
-      enabling agents to complete long-horizon tasks with sparse rewards.
-    </li>
-
-    <li>
-      <strong>Hierarchical Learning:</strong>
-      Combining high-level decision-making, planning, and reasoning with low-level control and action execution for complex long-horizon tasks.
-    </li>
-
-    <li>
-      <strong>Active Perception:</strong>
-      Developing task-aware perception systems for identifying relevant objects, receptacles, spatial relations, and environment states.
-    </li>
-
-  </ul>
-</section>
-
-    <hr />
-
-    <section id="projects">
-      <h2>Selected Projects</h2>
-
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_latent.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Latent-Space Safety for VLAs: From Detection to Prediction</div>
-          <div class="pub-venue">This project develops latent-space safety methods for VLAs by detecting failure-prone states directly from
-            the model’s internal representations. I proposed safety functions and latent dynamics models that
-            can predict potential failures before they physically occur, enabling earlier intervention during robot execution.
-            The broader goal is to make VLA-based robot policies safer and more robust through failure prediction, preemptive correction,
-            and safe recovery policies.</div>
-        </div>
-      </div>
-
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_geo.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Bridging Semantics and Geometry: Equivariant Representations for Generalizable VLAs</div>
-          <div class="pub-venue">This project investigates how to make VLAs more generalizable by bridging semantic understanding
-            with geometric reasoning. I proposed equivariant representation learning methods for VLAs,including
-            a lightweight geometric adapter on frozen VLM features and a dual-stream architecture that fuses semantic and geometric tokens
-            before action prediction. The goal is to improve robustness to viewpoint changes, object pose variations, and 
-            distribution shifts while preserving the semantic and language understanding of pretrained vision-language models.</div>
-        </div>
-      </div>
-      
-      
-      <div class="publication">
-        <img class="pub-thumb" src="project_rfm.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Modular Robotics Foundation Model for Long-Horizon Task Execution</div>
-          <div class="pub-venue"> This project developed a Modular Robotics Foundation Model (MRFM) for long-horizon task execution in 
-            unseen environments. I built an end-to-end embodied robotics pipeline that integrates task interpretation, 
-            task-relevant component identification, active perception, state estimation, reasoning, planning,
-            hierarchical decision-making, closed-loop execution, and failure detection and diagnosis. The goal is to enable robots to 
-            complete complex tasks through a unified learnable framework that separates high-level decision-making from low-level execution,
-            uses linguistic abstractions to connect policies with skills, and continually expands a reusable skill library.</div>
-        </div>
-      </div>
-
-
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_life.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Lifelong Learning by Transferable Linguistic Abstraction</div>
-          <div class="pub-venue"> This project explores lifelong robot learning through transferable linguistic abstractions that
-            make policies easier to reuse across environments and transfer from simulation to the real world. I developed 
-            language-based state estimation methods that represent objects, receptacles, spatial relations, and task progress in
-            a structured symbolic form, allowing the robot to reason over the environment beyond raw visual observations. 
-            I also developed a hierarchical language-conditioned policy framework that connects high-level task reasoning with
-            low-level skill execution, enabling more flexible generalization and more efficient sim-to-real transfer.</div>
-        </div>
-      </div>
-
-
-      
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_gen.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Generalizable Hierarchical Skill Learning</div>
-          <div class="pub-venue"> This project focuses on generalizable hierarchical skill learning by developing reusable high-level and
-            low-level skill libraries for real-world robotic systems. I trained language-conditioned high-level skills for
-            Boston Dynamics Spot, including active search, object pickup, object placement, and opening or closing articulated receptacles,
-            while grounding these skills in real-world execution through the Spot SDK and multimodal foundation models. 
-            I also trained low-level skills using reinforcement learning and imitation learning with the goal of expanding 
-            the framework to Unitree G1 and UR5 for robot-agnostic generalization.</div>
-        </div>
-      </div>
-
-
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_skimo.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Latent Skill Space and Dynamics for Sample-Efficient Long-Horizon Task Learning</div>
-          <div class="pub-venue"> This project explores skill-based model-based reinforcement learning for solving long-horizon tasks with
-            sparse rewards. I worked on jointly learning a reusable skill library and a skill dynamics model from
-            large task-agnostic offline datasets, allowing the agent to plan in latent skill space instead of predicting
-            every low-level action step-by-step. The goal is to improve sample efficiency and sim-to-real transfer by using
-            the learned skill model as a world model for efficient online high-level behavior learning and fine-tuning
-            the offline-trained representations for new downstream tasks.</div>
-        </div>
-      </div>
-      
-
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_tap.jpg" alt="Robotics foundation model project thumbnail" />
-        <div>
-          <div class="pub-title">Task-Oriented Active Perception</div>
-          <div class="pub-venue"> This project develops a task-driven active perception framework for robotic agents operating in partially observable and unstructured environments. 
-            I designed a framework that identifies task-relevant objects, receptacles, and environmental elements, actively searches for
-            unseen objects, estimates component states, and evaluates skill termination through success/failure reasoning. 
-            By using the current belief state to determine feasible next skills, the system reduces the policy’s action space and supports 
-            more efficient, grounded, and reliable decision-making.</div>
-        </div>
-      </div>
-
-      
-      
-      <div class="publication">
-        <img class="pub-thumb" src="project_muz.jpg" alt="Active perception project thumbnail" />
-        <div>
-          <div class="pub-title"> Novel Sequential Action-Space Representation for Efficient MuZero and AlphaZero Training</div>
-          <div class="pub-venue">This project improves the training efficiency of MuZero and AlphaZero by introducing a novel sequential action-space representation.
-            Instead of predicting all action dimensions simultaneously, I reformulated action prediction as a sequential decision process,
-            reducing the effective policy search complexity from O(P(n)) to O(n). This representation accelerated training by approximately 3×, 
-            reduced memory usage and model parameters, and improved performance compared to conventional full action-space representations.</div>
-        </div>
-      </div>
-
-      <div class="publication">
-        <img class="pub-thumb" src="project_nav.jpg" alt="VLM state estimation project thumbnail" />
-        <div>
-          <div class="pub-title">FIRM–MDP Hierarchical Exploration for Autonomous Mobile Robots in Continuous Belief Space</div>
-          <div class="pub-venue">This project developed a FIRM–MDP hierarchical exploration framework for autonomous mobile robot exploration
-            in continuous belief space. I designed a high-level global planner using dynamic-programming TSP over the FIRM graph to 
-            select the optimal sequence of regions, and a low-level continuous-belief-space local planner for safe and efficient exploration
-            under motion and observation uncertainty. The framework outperformed classical baselines, 
-            and I also developed a robust region-to-region navigation algorithm, called Transfer, which improved reliable motion in cluttered environments.</div>
-        </div>
-      </div>
-
-
-    </section>
-
-    <hr />
-
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <ul class="section-list">
-        <li>Add teaching assistantships, mentoring, tutorials, or robotics/AI teaching experience here.</li>
-      </ul>
-    </section>
-
-    <div class="footer">
-      Website inspired by simple academic homepage templates. Last updated: 2026.
-    </div>
   </main>
 </body>
 </html>
