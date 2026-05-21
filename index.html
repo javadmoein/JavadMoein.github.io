@@ -154,6 +154,11 @@
       display: block;
     }
 
+
+    .pub-thumb-video {
+  object-fit: cover;
+    }
+
     .pub-title {
       font-weight: 700;
       font-size: 17px;
@@ -222,6 +227,11 @@
         object-fit: contain;
       }
     }
+
+
+
+
+    
   </style>
 </head>
 
@@ -391,7 +401,7 @@
         </div>
 
         <div class="publication">
-          <video class="pub-thumb" autoplay loop muted playsinline preload="auto">
+            <video class="pub-thumb pub-thumb-video" autoplay loop muted playsinline preload="auto">
             <source src="project_skimo.mov" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
