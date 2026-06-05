@@ -35,6 +35,12 @@
   <meta name="twitter:description" content="Personal academic website of Javad Moein, Robotics AI researcher working on robot learning, vision-language-action models, embodied AI, and real-world robotic autonomy." />
   <meta name="twitter:image" content="https://javadmoein.github.io/profile2.png" />
 
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,12 +63,17 @@
     "sameAs": [
       "https://github.com/jaavad",
       "https://www.linkedin.com/in/javad-moein-10bbb079/",
-      "https://www2.ccs.neu.edu/research/helpinghands/people/"
+      "https://www2.ccs.neu.edu/research/helpinghands/people/",
+      "https://x.com/J_Moein"
     ],
     "knowsAbout": [
       "Robotics",
       "Robot Learning",
       "Vision-Language-Action Models",
+      "VLAs",
+      "World Models",
+      "World Action Models",
+      "WAMs",
       "Embodied AI",
       "Reinforcement Learning",
       "Imitation Learning",
@@ -143,13 +154,22 @@
     }
 
     .sidebar-info div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 10px;
     }
 
     .sidebar-info span {
-      display: inline-block;
-      width: 24px;
+      width: 22px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       color: #555;
+    }
+
+    .sidebar-info i {
+      font-size: 16px;
     }
 
     /* MAIN CONTENT */
@@ -263,9 +283,12 @@
         margin: 0 auto 18px;
       }
 
+      .sidebar-info div {
+        justify-content: center;
+      }
+
       .sidebar-info span {
-        width: auto;
-        margin-right: 8px;
+        width: 22px;
       }
 
       .main-content {
@@ -306,16 +329,44 @@
       <h1 class="sidebar-name">Javad Moein</h1>
 
       <p class="sidebar-title">
-        Robotics AI Researcher
+        Robotics AI Researcher | Robot Learning
       </p>
 
       <div class="sidebar-info">
-        <div><span>📍</span> Boston, Massachusetts</div>
-        <div><span>🏛️</span> Northeastern University</div>
-        <div><span>✉️</span> <a href="mailto:moein.j@northeastern.edu">Email</a></div>
-        <div><span>💻</span> <a href="https://github.com/jaavad" target="_blank" rel="noopener noreferrer">GitHub</a></div>
-        <div><span>🔗</span> <a href="https://www.linkedin.com/in/javad-moein-10bbb079/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
-        <div><span>📄</span> <a href="Javad_Moein_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a></div>
+        <div>
+          <span><i class="fa-solid fa-location-dot"></i></span>
+          Boston, Massachusetts
+        </div>
+
+        <div>
+          <span><i class="fa-solid fa-building-columns"></i></span>
+          Northeastern University
+        </div>
+
+        <div>
+          <span><i class="fa-solid fa-envelope"></i></span>
+          <a href="mailto:moein.j@northeastern.edu">Email</a>
+        </div>
+
+        <div>
+          <span><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/jaavad" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+
+        <div>
+          <span><i class="fa-brands fa-linkedin"></i></span>
+          <a href="https://www.linkedin.com/in/javad-moein-10bbb079/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <div>
+          <span><i class="fa-brands fa-x-twitter"></i></span>
+          <a href="https://x.com/J_Moein" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+
+        <div>
+          <span><i class="fa-solid fa-file-lines"></i></span>
+          <a href="Javad_Moein_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        </div>
       </div>
     </aside>
 
